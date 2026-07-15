@@ -1,0 +1,48 @@
+# glider
+[aircraft]
+mass = 35.0                         # kg, m
+wing_area = 25.0                    # m^2, S
+wing_span = 30.0                    # m, b
+
+[aircraft.limits]
+max_load_factor = 8.0               # scale factor of g
+min_load_factor = -3.0              # scale factor of g
+gamma_rate_damping = 0.05           # % of gamma_{k-1}
+
+[aircraft.aerodynamics]
+cl_0= 0.28                          # lift coefficient at zero angle of attack
+cl_alpha = 5.0                      # lift curve slope (per radian)
+cl_min = -0.4                       # minimum lift coefficient (negative limit)
+cl_max = 1.7                        # maximum lift coefficient (stall limit)
+cd_0 = 0.015                        # parasitic drag coefficient
+oswald_efficiency = 0.85            # Oswald efficiency factor, e
+
+# Mars
+[planet]
+g = 3.71                            # m/s^2, vs. 9.81 m/s^2 on Earth
+sol = 24.66
+obliquity = 25.19                   # deg, axial tilt
+roughness_length = 0.2              # m, average for 6.0
+
+#[planet.clock]
+#sol = 24.66                         # hours in a Sol
+#start_l_s = 0.0                     # L_s = 0
+
+[planet.orbit]
+eccentricity = 0.0934               # orbital eccentricity
+mean_motion = 0.538                 # degrees per sol (668.6 sols per year)
+perihelion_ls = 251.0               # L_s = 251
+epoch_ls = 71.0                     # start at aphelion, Sol 0
+
+[planet.atmosphere]
+rho_0 = 0.02                        # kg/m^3, air density at surface
+surface_temp = 210.0                # K, average temperature at surface
+air_mass = 0.0440                   # kg/mol for CO2 (95% on Mars)
+mu_0 = 1.48e-5                      # kg/m-s
+s = 240.0                           # K, Sutherland constant for CO2
+reference_temp = 273.0              # K, reference temperature
+lapse_rate = -0.0015                # K/m, winter, while dry adiabatic lapse rate is ~4.5K/km
+c = 240.0                           # m/s, speed of sound
+cp = 840.0                          # J/kg*K for CO2
+pbl_day_height = 3000.0             # m, average planetary boundary layer during the day
+pbl_night_height = 100.0            # m, average planetary boundary layer during the night

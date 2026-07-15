@@ -1,0 +1,16 @@
+[package]
+name = "wavepool"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jean-Pierre de la Croix <Jean-Pierre.de.la.Croix@jpl.nasa.gov>"]
+description = "A wave soaring simulator for Mars"
+license = "Apache-2.0"
+repository = "https://github.com/nasa/wavepool"
+
+[dependencies]
+anyhow = "1.0.98"
+chrono = "0.4.41"
+nalgebra = "0.34.0"
+polars = { version = "0.50.0", features = ["parquet"] }
+serde = "1.0.219"
+toml = "0.9.5"
